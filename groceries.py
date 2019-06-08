@@ -93,6 +93,41 @@ for p in sorted_products:
     price_usd = " // Price: ${0:.2f}".format(p["price"])
     print(" + " + p["name"] + str(price_usd))
 
+#
+#
+#
+
+#Part 2 - List of Departments
+
+depts = []
+
+for p in products:
+    #print(p["department"])
+    #depts.append(p["department"]) # This code will add departments regardless it already exist in the list
+    if p["department"] not in depts:   # This will add departments only if they are new departments so as to avoid duplication
+        depts.append(p["department"])
+
+#print(depts)
+
+dept_count = len(depts)
+print("--------------")
+print("THERE ARE " + str(dept_count) + " DEPARTMENTS:")
+print("--------------")
+
+
+#def sort_by_dept_name(any_product):
+#    return any_product["department"]
+#
+#sorted_depts = sorted(depts, key=sort_by_dept_name)
+
+#for p in products: #Before sorting
+for d in depts:
+    print(d)
+
+
+
+
+
 
 
 
