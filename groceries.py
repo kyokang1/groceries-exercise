@@ -64,6 +64,12 @@ print("--------------")
 print("THERE ARE " + str(product_count) + " PRODUCTS:")
 print("--------------")
 
+#sorting by name
+def sort_by_name(any_product):
+    return any_product["name"]
+
+sorted_products = sorted(products, key=sort_by_name)
+
 #{
 #    "id":1, 
 #    "name": "Chocolate Sandwich Cookies", 
@@ -73,7 +79,9 @@ print("--------------")
 #}
 
 #list of products
-for p in products:
+
+#for p in products: #Before sorting
+for p in sorted_products:
     #print(type(p))    #identify type of each item
     #print(p["name"])
     
