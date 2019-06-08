@@ -99,31 +99,50 @@ for p in sorted_products:
 
 #Part 2 - List of Departments
 
+#depts = []
+#
+#for p in products:
+#    #print(p["department"])
+#    
+#    #depts.append(p["department"]) # This code will add departments regardless it already exist in the list
+#        
+#    if p["department"] not in depts:   # This will add departments only if they are new departments so as to avoid duplication
+#        depts.append(p["department"])
+    
+#alternative way to remove duplicates using set
+
 depts = []
 
 for p in products:
-    #print(p["department"])
-    #depts.append(p["department"]) # This code will add departments regardless it already exist in the list
-    if p["department"] not in depts:   # This will add departments only if they are new departments so as to avoid duplication
-        depts.append(p["department"])
+    depts.append(p["department"])
 
-#print(depts)
+unique_depts = list(set(depts))
 
-dept_count = len(depts)
+dept_count = len(unique_depts)
 print("--------------")
 print("THERE ARE " + str(dept_count) + " DEPARTMENTS:")
 print("--------------")
 
-
-#def sort_by_dept_name(any_product):
-#    return any_product["department"]
-#
-#sorted_depts = sorted(depts, key=sort_by_dept_name)
-
-#for p in products: #Before sorting
-for d in depts:
+for d in unique_depts:
     print(d)
 
+##print(depts)
+#
+#dept_count = len(depts)
+#print("--------------")
+#print("THERE ARE " + str(dept_count) + " DEPARTMENTS:")
+#print("--------------")
+#
+#
+##def sort_by_dept_name(any_product):
+##    return any_product["department"]
+##
+##sorted_depts = sorted(depts, key=sort_by_dept_name)
+#
+##for p in products: #Before sorting
+#for d in depts:
+#    print(d)
+#
 
 
 
