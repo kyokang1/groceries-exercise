@@ -123,23 +123,14 @@ unique_depts.sort()   #sort by the dept names in alphabetical order
 for d in unique_depts:
     matching_prod = [p for p in products if p["department"] == d]   # [team for team in teams if team["city"] == city]
     matching_prod_count = len(matching_prod)
-    print(" + " + d.title() + " // (" + str(matching_prod_count) + " products)")   #Convert to Title case
 
+    #print(" + " + d.title() + " // (" + str(matching_prod_count) + " products)")   #Convert to Title case
 
-#print(depts)
+    # label 1 for "product" and "products" for else
+    if matching_prod_count == 1:
+        label = "product"
+    else:
+        label = "products"
 
-    
-##def sort_by_dept_name(any_product):
-##    return any_product["department"]
-##
-##sorted_depts = sorted(depts, key=sort_by_dept_name)
-#
-#
-
-
-
-
-
-
-
+    print(" + " + d.title() + " // (" + str(matching_prod_count) + " " + label + ")")
 
