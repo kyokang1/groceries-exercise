@@ -108,7 +108,7 @@ for p in products:
     #if p["department"] not in depts:   # This will add departments only if they are new departments so as to avoid duplication
     #    depts.append(p["department"])
     
-    #alternative way to remove duplicates using set
+#alternative way to remove duplicates using set
     depts.append(p["department"])
 
 unique_depts = list(set(depts))
@@ -121,7 +121,9 @@ print("--------------")
 unique_depts.sort()   #sort by the dept names in alphabetical order
 
 for d in unique_depts:
-    print(d.title())   #Convert to Title case
+    matching_prod = [p for p in products if p["department"] == d]   # [team for team in teams if team["city"] == city]
+    matching_prod_count = len(matching_prod)
+    print(" + " + d.title() + " // (" + str(matching_prod_count) + " products)")   #Convert to Title case
 
 
 #print(depts)
