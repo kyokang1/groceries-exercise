@@ -1,6 +1,6 @@
 # groceries.py
 
-#from pprint import pprint
+from pprint import pprint
 
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
@@ -26,7 +26,7 @@ products = [
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 
 #print(products)
-# pprint(products)
+#pprint(products)   => pretty print 
 
 #print(type(products))  #identify the type of products variable = list
 
@@ -60,9 +60,15 @@ products = [
 
 #Heading
 product_count = len(products)
+#print("--------------")
+#print("THERE ARE " + str(product_count) + " PRODUCTS:")
+#print("--------------")
+
+#alternative showing the headline using f
 print("--------------")
-print("THERE ARE " + str(product_count) + " PRODUCTS:")
+print(f"THERE ARE {product_count} PRODUCTS:")
 print("--------------")
+
 
 #sorting by name
 def sort_by_name(any_product):
@@ -85,6 +91,8 @@ for p in sorted_products:
     #print(type(p))    #identify type of each item
     #print(p["name"])
     
+    #print(f"{p['name']} ... {p['price']}")  # Listing items using 
+
     #showing price as string
     #price_usd = p["price"]
     #print(" + " + p["name"] + " // $" + str(price_usd))
@@ -98,6 +106,21 @@ for p in sorted_products:
 #
 
 #Part 2 - List of Departments
+
+#Output should look like below:``
+#--------------
+#THERE ARE 10 DEPARTMENTS:
+#--------------
+# + Babies (1 product)
+# + Beverages (5 products)
+# + Dairy Eggs (1 product)
+# + Dry Goods Pasta (1 product)
+# + Frozen (4 products)
+# + Household (1 product)
+# + Meat Seafood (1 product)
+# + Pantry (2 products)
+# + Personal Care (2 products)
+# + Snacks (2 products)
 
 depts = []
 
